@@ -2,7 +2,7 @@
 <!-- https://cryptojs.gitbook.io/docs/ -->
 <!-- https://cdnjs.com/libraries/crypto-js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script> --->
 
 <script>
 var header = document.getElementById("header");
@@ -12,7 +12,7 @@ function toggle() {
   var d = document.getElementById("data");
   var p = document.getElementById("pass");
   var input = document.getElementById("pwd");
-  if(CryptoJS.MD5(input.value).toString()=="%%%PASSWORDHERE%%%"){
+  if(CryptoJS.SHA256(input.value).toString()=="%%%PASSWORDHERE%%%"){
     d.style.display = "block";
     p.style.display = "none";
   } else {
@@ -20,8 +20,8 @@ function toggle() {
     d.style.display = "none";
     p.style.display = "block";
   }
-  console.log(CryptoJS.MD5(input.value).toString())
-} 
+  console.log(CryptoJS.SHA256(input.value).toString())
+}
 </script>
 
 <div id = "pass" style = "display: block; width: 250px; margin: 0 auto; margin-top: 150px;">

@@ -5,7 +5,6 @@
 #' @export
 #' @import digest
 protect <- function(file, password){
-  file = "~/path/to/file.html"
   if(substr(file, nchar(file)-4, nchar(file)) != ".html"){
     stop("File is not an html file")
   }
@@ -14,7 +13,7 @@ protect <- function(file, password){
   }
   template_path <- system.file("template.html", package = "protectr")
   template <- paste(readLines(template_path), collapse = "\n")
-  md5_password <- digest::digest(password, serialize = FALSE)
+  md5_password <- digest::digest(password, algo = "sha256", serialize = FALSE)
   template <- sub("%%%PASSWORDHERE%%%", md5_password, template)
   html_doc <- paste(readLines(file), collapse = "\n")
   protected <- sub("%%%HTMLHERE%%%", html_doc, template)
