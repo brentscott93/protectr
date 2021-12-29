@@ -20,3 +20,4 @@ protect <- function(file, password){
   new_file <- sub(".html", "-protected.html", file)
   writeLines(protected, new_file)
 }
+
