@@ -5,7 +5,8 @@
 #' @export
 #' @import digest
 protect <- function(file, password){
-  if(subtr(file, -5, nchar(file)) != ".html"){
+  file = "~/path/to/file.html"
+  if(substr(file, nchar(file)-4, nchar(file)) != ".html"){
     stop("File is not an html file")
   }
   if(!is.character(password)){
