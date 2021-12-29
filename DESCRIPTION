@@ -1,12 +1,11 @@
 Package: protectr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Password Protect an HTML with md5
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Brent Scott
+Maintainer: Brent Scott <brentscott@mailfence.com>
+Description: Password protect and HTML file. Password is hashed using md5 and stored as the hash in the file. Not the most secure, but a little better than putting the passord in plain text in the HTML file. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
