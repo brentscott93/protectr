@@ -1,0 +1,38 @@
+<!-- (A) LOAD CRYPTO JS LIBRARY -->
+<!-- https://cryptojs.gitbook.io/docs/ -->
+<!-- https://cdnjs.com/libraries/crypto-js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+
+<script>
+var header = document.getElementById("header");
+header.style.display = "none";
+function toggle() {
+  var h = document.getElementById("header");
+  var d = document.getElementById("data");
+  var p = document.getElementById("pass");
+  var input = document.getElementById("pwd");
+  if(CryptoJS.MD5(input.value).toString()=="%%%PASSWORDHERE%%%"){
+    d.style.display = "block";
+    p.style.display = "none";
+  } else {
+    h.style.display = "none";
+    d.style.display = "none";
+    p.style.display = "block";
+  }
+  console.log(CryptoJS.MD5(input.value).toString())
+} 
+</script>
+
+<div id = "pass" style = "display: block; width: 250px; margin: 0 auto; margin-top: 150px;">
+ <label for="pwd" style = "text-align: left">Password</label><br>
+ <input type="password" id="pwd" name="pwd">
+ <button onclick="toggle()">Enter</button>
+</div>
+
+
+<div id = "data" style = "display: none;">
+
+%%%HTMLHERE%%%
+
+</div>
